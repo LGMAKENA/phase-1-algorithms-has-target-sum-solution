@@ -1,7 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
 }
-
+function hasTargetSum(arr, target) {
+  const numSet = new Set();
+  
+  for (let i = 0; i < arr.length; i++) {
+    const complement = target - arr[i];
+    if (numSet.has(complement)) {
+      return true;
+    }
+    numSet.add(arr[i]);
+  }
+  
+  return false;
+}
 /* 
   Write the Big O time complexity of your function here
 */
